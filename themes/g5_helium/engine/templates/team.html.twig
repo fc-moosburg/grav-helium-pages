@@ -1,0 +1,52 @@
+{% extends "default.html.twig" %}
+
+{% set team_image %}
+    {% if header.page.team.image is defined %}
+        {% include 'partials/team_image.html.twig' with {'image': header.page.team.image, 'description': header.page.team.description, 'name': page.title } %}
+    {% endif %}
+{% endset %}
+
+{% set contacts %}
+    {% if header.contacts|length > 0 %}
+        {% include 'partials/team_contact.html.twig' with {'contacts': header.contacts} %}
+    {% endif %}
+{% endset %}
+
+{% set times %}
+    {% if header.times|length > 0 %}
+        {% include 'partials/team_times.html.twig' with {'times': header.times, 'classes': 'hidden-desktop hidden-large'} %}
+        {% include 'partials/team_times.html.twig' with {'times': header.times, 'classes': 'hidden-phone hidden-tablet fcm-move-to-fcm-sidebar'} %}
+    {% endif %}
+{% endset %}
+
+{% set bfv_widget %}
+        {% include 'partials/bfv_widget.html.twig' with {'bfv_id': header.team.bfv_id, 'name': page.title|raw, 'type': 'team' } %}
+{% endset %}
+
+
+{% block title %}
+    <div class="team-content">
+        <h2 itemprop="headline">{{ page.title|raw }}</h2>
+    </div>
+{% endblock %}
+
+
+{% block main_content %}
+    <div class="team-content">
+        {{ team_image|raw }}
+
+        {{ page.content|raw }}
+
+        {{ times|raw}}
+
+        {{ contacts|raw }}
+    </div>
+{% endblock %}
+
+
+
+{% if header.team.bfv_id is defined %}
+    {% block bfv_widget %}
+        {{ bfv_widget|raw }}
+    {% endblock %}
+{% endif %}

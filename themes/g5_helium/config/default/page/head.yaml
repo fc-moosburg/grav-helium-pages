@@ -1,0 +1,9 @@
+meta: {  }
+head_bottom: ''
+atoms:
+  -
+    title: Lightcase
+    type: lightcase
+    attributes:
+      enabled: true
+    id: lightcase-7793

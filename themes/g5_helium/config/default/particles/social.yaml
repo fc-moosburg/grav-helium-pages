@@ -1,0 +1,31 @@
+enabled: '1'
+css:
+  class: ''
+title: ''
+target: _blank
+display: both
+items:
+  -
+    icon: 'fa fa-map-marker fa-fw'
+    text: ''
+    title: 'Google Maps'
+    link: 'https://goo.gl/maps/VmJRVNfvm3LbRt9N6'
+    name: Maps
+  -
+    icon: 'fa fa-facebook fa-fw'
+    text: ''
+    title: Facebook
+    link: 'https://www.facebook.com/FC-Moosburg-732572256868413/'
+    name: Facebook
+  -
+    icon: 'fa fa-futbol-o fa-fw'
+    text: ''
+    title: FuPa
+    link: 'https://www.fupa.net/club/fc-moosburg'
+    name: FuPa
+  -
+    icon: 'far fa-user-circle'
+    text: ''
+    title: Login
+    link: /login
+    name: Login

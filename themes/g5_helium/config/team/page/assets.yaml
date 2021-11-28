@@ -1,0 +1,8 @@
+javascript:
+  -
+    location: 'https://widget-prod.bfv.de/widget/widgetresource/widgetjs'
+    inline: ''
+    in_footer: '0'
+    extra: {  }
+    priority: '10'
+    name: 'BFV Widget Base JS File'

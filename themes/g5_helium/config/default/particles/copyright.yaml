@@ -1,0 +1,11 @@
+enabled: '1'
+date:
+  start: '2020'
+  end: now
+owner: 'FC Moosburg e.V.'
+link: ''
+target: _blank
+additional:
+  text: 'Stadtbadstraße 14</br>85368 Moosburg'
+css:
+  class: ''

@@ -1,0 +1,12 @@
+name: BFV Widget
+description: BFV Widget Einstellungen
+type: global
+
+form:
+  fields:
+
+    bfv_club_id:
+      type: text
+      label: Standard Club Id (BFV Widget)
+      default: 00ES8GNHAK00000FVV0AG08LVUPGND5I
+      placeholder: 00ES8GNHAK00000FVV0AG08LVUPGND5I

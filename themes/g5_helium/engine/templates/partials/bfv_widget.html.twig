@@ -1,0 +1,15 @@
+{% set div_id="bfv{{ bfv_id }}" %}
+
+{% if header.page.bfv_widget.enabled|default(true) %}
+    <div class="fcm-move-to-fcm-sidebar">
+        <h3>Spielplan</h3>
+        <div id="{{ div_id }}">Lade {{ type|lower == "team" ? name : "Vereinsspielplan" }}...</div>
+        <script>
+            {% if type|lower == "team" %}
+                BFVWidget.HTML5.zeigeMannschaftKomplett("{{ bfv_id }}", "{{ div_id }}", { height: "600", width: "100%", selectedTab:BFVWidget.HTML5.mannschaftTabs.spiele, colorResults: "undefined" , colorNav: "undefined" , colorClubName : "undefined" , backgroundNav: "undefined"});
+            {% else %}
+                BFVWidget.HTML5.zeigeVereinSpiele("{{ bfv_id }}", "{{ div_id }}", { height: "550", width: "100%", selectedTab: BFVWidget.HTML5.vereinTabs.spiele, colorResults: "undefined" , colorNav: "undefined" , colorClubName : "undefined" , backgroundNav: "undefined"});
+            {% endif %}
+        </script>
+    </div>
+{% endif %}

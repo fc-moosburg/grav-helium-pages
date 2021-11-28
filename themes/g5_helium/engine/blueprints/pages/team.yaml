@@ -1,0 +1,242 @@
+title: Page
+extends@: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+            bfv_widget:
+              fields:
+                header.page.bfv_widget.type:
+                  default: club
+
+            team:
+              type: section
+              title: Team Einstellungen
+              underline: true
+              fields:
+                header.page.team.image:
+                  type: pagemediaselect
+                  label: Team Bild
+                  toggleable: true
+                
+                header.page.team.description:
+                  type: text
+                  label: Beschreibung
+                  help: Benötigt Bild!
+                  toggleable: true
+                  placeholder: Saison 2021/22
+            
+            times:
+              type: section
+              title: Trainingszeiten
+              underline: true
+              fields:
+                header.times:
+                  type: list
+                  # style: vertical
+                  label: Zeiten
+                  fields:
+                    .day:
+                      label: Wochentag
+                      type: selectunique
+                      selectize:
+                        options:
+                          - text: Montag
+                            value: Montag
+                          - text: Dienstag
+                            value: Dienstag
+                          - text: Mittwoch
+                            value: Mittwoch
+                          - text: Donnerstag
+                            value: Donnerstag
+                          - text: Freitag
+                            value: Freitag
+                          - text: Samstag
+                            value: Samstag
+                          - text: Sonntag
+                            value: Sonntag
+                      validate:
+                        required: true
+                        message: Bitte Wochentag(e) angeben.
+                    
+                    .schedule.start:
+                      type: datetime
+                      label: von
+                      help: Startzeit
+                      format: H:i
+                      default: '17:30'
+                      validate:
+                        required: true
+                        message: Bitte Startzeit angeben.
+                        pattern: '\d\d\:\d\d'
+                    
+                    .schedule.end:
+                      type: datetime
+                      label: bis
+                      help: Endzeit
+                      format: H:i
+                      default: '19:00'
+                      validate:
+                        required: true
+                        message: Bitte Endzeit angeben.
+                        pattern: '\d\d\:\d\d'
+
+                    .note:
+                      type: text
+                      label: Anmerkung / Ort
+                      toggleable: true
+                      placeholder: Driescher Sportpark / Halle
+                      default: Driescher Sportpark
+
+
+            contacts:
+              type: section
+              title: Ansprechpartner
+              underline: true
+              fields:
+                header.contacts:
+                  type: list
+                  style: vertical
+                  label: Trainer und Betreuer
+                  fields:
+                    .name:
+                      type: text
+                      label: Name
+                      validate:
+                        required: true
+
+                    .role:
+                      type: text
+                      label: Position
+                      placeholder: Trainer / Betreuer
+
+                    .telephone:
+                      type: textarea
+                      label: Telefon
+                      placeholder: 08761 12345
+                      help: Mehrere Telefonnummern in neuer Zeile angeben.
+
+                    .email:
+                      type: text
+                      label: Email
+                      placeholder: Bitte <name>@fc-moosburg.de Adresse verwenden!
+                      validate:
+                        type: email
+
+                    .image:
+                      type: pagemediaselect
+                      label: Bild
+                      placeholder: Bild des Trainers / Betreuers
+                      help: Bitte Bild zuerst unter Seitenmedien / Page media hochladen.
+                      toggleable: true
+
+
+
+        advanced:
+          fields:
+            overrides:
+              fields:
+                header.page.show_title:
+                  type: toggle
+                  label: Show Title
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
+        team:
+          type: tab
+          title: Team Info
+
+          fields:
+            header.content.items:
+              type: text
+              yaml: true
+              label: Items
+              default: '@self.children'
+
+            header.content.leading:
+              type: text
+              label: Trainer
+              default: 0
+              validate:
+                type: int
+                min: 0
+
+        #     header.content.columns:
+        #       type: text
+        #       label: Columns
+        #       default: 2
+        #       validate:
+        #         type: int
+        #         min: 0
+
+        #     header.content.limit:
+        #       type: text
+        #       label: Max Item Count
+        #       default: 5
+        #       validate:
+        #         required: true
+        #         type: int
+        #         min: 1
+
+        #     header.content.order.by:
+        #       type: select
+        #       label: Order By
+        #       default: date
+        #       options:
+        #         folder: Folder
+        #         title: Title
+        #         date: Date
+        #         default: Default
+
+        #     header.content.order.dir:
+        #       type: select
+        #       label: Order
+        #       default: desc
+        #       options:
+        #         asc: Ascending
+        #         desc: Descending
+
+        #     header.content.show_date:
+        #       type: toggle
+        #       label: Show Date
+        #       highlight: 0
+        #       default: 0
+        #       options:
+        #         1: PLUGIN_ADMIN.ENABLED
+        #         0: PLUGIN_ADMIN.DISABLED
+        #       validate:
+        #         type: bool
+
+        #     header.content.pagination:
+        #       type: toggle
+        #       label: Pagination
+        #       highlight: 1
+        #       default: 1
+        #       options:
+        #         1: PLUGIN_ADMIN.ENABLED
+        #         0: PLUGIN_ADMIN.DISABLED
+        #       validate:
+        #         type: bool
+
+
+        #     header.content.url_taxonomy_filters:
+        #       type: toggle
+        #       label: URL Taxonomy Filters
+        #       highlight: 1
+        #       default: 1
+        #       options:
+        #         1: PLUGIN_ADMIN.ENABLED
+        #         0: PLUGIN_ADMIN.DISABLED
+        #       validate:
+        #         type: bool

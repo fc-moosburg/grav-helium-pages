@@ -1,0 +1,21 @@
+{% extends "partials/page.html.twig" %}
+
+{% block content %}
+
+    {% if header.page.show_title|default(true) %}
+        {% block title %}
+            <h2 itemprop="headline">{{ page.title|raw }}</h2>
+        {% endblock %}
+    {% endif %}
+
+    {% block main_content %}
+        {{ page.content|raw }}
+    {% endblock %}
+
+    {% block bfv_widget %}
+        {% include 'partials/bfv_widget.html.twig' with {'bfv_id': header.page.bfv_widget.id|default(gantry.config.page.bfv_widget.bfv_club_id), 'type': header.page.bfv_widget.type, 'name': page.title } %}
+    {% endblock %}
+
+    {% do assets.addJs('gantry-theme://engine/js/move.js', {group:'bottom'}) %}
+
+{% endblock %}

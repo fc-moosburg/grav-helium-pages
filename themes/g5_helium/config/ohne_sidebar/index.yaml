@@ -1,0 +1,70 @@
+name: ohne_sidebar
+timestamp: 1638109023
+version: 7
+preset:
+  image: 'gantry-admin://images/layouts/default.png'
+  name: default
+  timestamp: 1637610260
+positions:
+  aside: Aside
+sections:
+  navigation: Navigation
+  intro: Intro
+  features: Features
+  utility: Utility
+  above: Above
+  testimonials: Testimonials
+  expanded: Expanded
+  header: Header
+  aside: Aside
+  sidebar: Sidebar
+  mainbar: Mainbar
+  footer: Footer
+  offcanvas: Offcanvas
+particles:
+  messages:
+    system-messages-8488: 'System Messages'
+  logo:
+    logo-2430: 'Logo / Image'
+    logo-5573: 'Logo / Image'
+  menu:
+    menu-4497: Menu
+  social:
+    social-8661: Social
+  position:
+    position-position-7647: Aside
+  content:
+    system-content-8486: 'Page Content'
+  copyright:
+    copyright-2914: Copyright
+  horizontalmenu:
+    horizontalmenu-7000: 'Horizontal Menu'
+  totop:
+    totop-6201: 'To Top'
+  mobile-menu:
+    mobile-menu-9763: Mobile-menu
+inherit:
+  default:
+    navigation: navigation
+    header: header
+    intro: intro
+    features: features
+    utility: utility
+    above: above
+    testimonials: testimonials
+    expanded: expanded
+    aside: aside
+    mainbar: mainbar
+    footer: footer
+    offcanvas: offcanvas
+    system-messages-8488: system-messages-7972
+    logo-2430: logo-9608
+    menu-4497: menu-6409
+    social-8661: social-3171
+    position-position-7647: position-position-4734
+    system-content-8486: system-content-1587
+    logo-5573: logo-9571
+    copyright-2914: copyright-1736
+    horizontalmenu-7000: horizontalmenu-9034
+    totop-6201: totop-8670
+    mobile-menu-9763: mobile-menu-5697

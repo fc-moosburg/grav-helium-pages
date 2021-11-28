@@ -1,0 +1,33 @@
+<h3 class="center">Ansprechpartner</h3>
+<div class="team-cards">
+    <div class="g-grid">
+        {% for contact in contacts %}
+            <div class="g-block size-33-3">
+                <div class="card">
+                    <div class="card-block">
+                        {% if contact.image|length > 0 %}
+                            <div class="fa">
+                                {{ media[contact.image].loading('lazy').cropZoom(150,150).html()|raw }}
+                            </div>
+                        {% else %}
+                            <i class="fa fa-user"></i>
+                        {% endif %}
+                        <h4 class="card-title">{{ contact.name }}</h4>
+                        <p class="card-text">
+
+                            {% if contact.role|length > 0 %}
+                                <strong>{{ contact.role }}</strong>{{ ((contact.telephone|length > 0) or (contact.email|length > 0) ? '<br/>' : '')|raw }}
+                            {% endif %}
+
+                            {% if contact.telephone|length > 0 %}
+                                {{ (contact.telephone|trim|nl2br ~ (contact.email|length > 0 ? '<br/>' : ''))|raw }}
+                            {% endif %}
+                            
+                            {{ contact.email|trim|nl2br }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

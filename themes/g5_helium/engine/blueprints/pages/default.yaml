@@ -1,0 +1,153 @@
+title: Page
+extends@:
+    type: default
+    context: 'blueprints://pages'
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+            bfv_widget:
+              type: section
+              title: BFV Widget
+              fields:
+                header.page.bfv_widget.enabled:
+                  type: toggle
+                  label: Spielplan Widget anzeigen
+                  help: Wenn aktiv wird die Id und die Art verwendet um das BFV Spielplan-Widget einzubinden.
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    required: true
+
+                header.page.bfv_widget.type:
+                  type: toggle
+                  label: Art des Widgets
+                  help: Der Typ der Id (Verein oder Team).
+                  highlight: team
+                  default: club
+                  options:
+                    team: Team
+                    club: Verein
+
+                header.page.bfv_widget.id:
+                  type: text
+                  label: BFV Widget Id
+                  help: "Die Id besteht nur aus Buchstaben und Zahlen. Wenn keine Id übergeben wird, wird die Vereinsid der Seiteneinstellungen verwendet (benötigt Art: Verein)."
+                  toggleable: true
+                  placeholder: 00ES8GNHAK00000FVV0AG08LVUPGND5I
+                  validate:
+                    pattern: '[\d\w]+'
+
+
+
+        advanced:
+          fields:
+            overrides:
+              fields:
+                header.page.show_title:
+                  type: toggle
+                  label: Show Title
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
+        # blog:
+        #   type: tab
+        #   title: Blog List
+
+        #   fields:
+        #     header.content.items:
+        #       type: textarea
+        #       yaml: true
+        #       label: Items
+        #       default: '@self.children'
+
+        #     header.content.leading:
+        #       type: text
+        #       label: Leading Articles THIS HAS BEEN MODIFIED
+        #       default: 0
+        #       validate:
+        #         type: int
+        #         min: 0
+
+        #     header.content.columns:
+        #       type: text
+        #       label: Columns
+        #       default: 2
+        #       validate:
+        #         type: int
+        #         min: 0
+
+        #     header.content.limit:
+        #       type: text
+        #       label: Max Item Count
+        #       default: 5
+        #       validate:
+        #         required: true
+        #         type: int
+        #         min: 1
+
+        #     header.content.order.by:
+        #       type: select
+        #       label: Order By
+        #       default: date
+        #       options:
+        #         folder: Folder
+        #         title: Title
+        #         date: Date
+        #         default: Default
+
+        #     header.content.order.dir:
+        #       type: select
+        #       label: Order
+        #       default: desc
+        #       options:
+        #         asc: Ascending
+        #         desc: Descending
+
+        #     header.content.show_date:
+        #       type: toggle
+        #       label: Show Date
+        #       highlight: 0
+        #       default: 0
+        #       options:
+        #         1: PLUGIN_ADMIN.ENABLED
+        #         0: PLUGIN_ADMIN.DISABLED
+        #       validate:
+        #         type: bool
+
+        #     header.content.pagination:
+        #       type: toggle
+        #       label: Pagination
+        #       highlight: 1
+        #       default: 1
+        #       options:
+        #         1: PLUGIN_ADMIN.ENABLED
+        #         0: PLUGIN_ADMIN.DISABLED
+        #       validate:
+        #         type: bool
+
+
+        #     header.content.url_taxonomy_filters:
+        #       type: toggle
+        #       label: URL Taxonomy Filters
+        #       highlight: 1
+        #       default: 1
+        #       options:
+        #         1: PLUGIN_ADMIN.ENABLED
+        #         0: PLUGIN_ADMIN.DISABLED
+        #       validate:
+        #         type: bool
