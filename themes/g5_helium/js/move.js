@@ -1,9 +1,9 @@
 console.log("Moving things...");
 function fcmMove() {
 
-    selector = "fcm-move-to-";
+    let selector = "fcm-move-to-";
 
-    items_to_move = jQuery(`[class*='${selector}']`);
+    let items_to_move = jQuery(`[class*='${selector}']`);
     // console.log(items_to_move);
 
     items_to_move.each((i, widget) => {
@@ -20,5 +20,15 @@ function fcmMove() {
     });
 }
 
+function wrapTables() {
+    jQuery("table").wrapAll("<div style='overflow-x:auto'></div>");
+}
+
+function hoverImageSwap() {
+    jQuery('img').each(function () { let source = this.src; let hover = this.getAttribute('data-hover'); if (!hover) { return; } this.onmouseover = () => { this.src = this.getAttribute('data-hover'); }; this.onmouseout = () => { this.src = source; } });
+}
+
 fcmMove();
+wrapTables();
+hoverImageSwap();
 

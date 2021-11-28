@@ -39,34 +39,6 @@ css:
     name: 'MFS Plakate'
 javascript:
   -
-    location: ''
-    inline: "x = jQuery(\"[id^=bfv]\");\n\nsidebar = jQuery(\"#spielplan\")[0];\nif(sidebar){\n\nx.each((i,widget) => {\n  parents = jQuery(widget).parents(); \n  if(jQuery.inArray(sidebar, parents) === -1){\n    // jQuery(sidebar).empty();\n    jQuery(widget).remove();\n    sidebar.appendChild(widget);\n  } else if (jQuery(\"[id='\" + widget.id + \"']\").length > 1) {\n    console.log(\"Removed\", widget);\n    jQuery(widget).remove();\n  } else {\n    console.log(widget);\n  }\n});\n\n\n  jQuery.each(x, (i, widget) => {\n    if(i>0) {jQuery(widget).remove()};\n  });\n}"
-    in_footer: '1'
-    extra: {  }
-    priority: '-9'
-    name: 'BFV Widget Sidebar'
-  -
-    location: ''
-    inline: 'jQuery("table").wrapAll("<div style=''overflow-x:auto''></div>");'
-    in_footer: '1'
-    extra: {  }
-    priority: '0'
-    name: 'Table Responsive'
-  -
-    location: ''
-    inline: "x = jQuery(jQuery(\"[id^=bfv]\").get().reverse());\n\nsidebar = jQuery(\"#g-sidebar > .g-grid > .g-block > .g-content\")[0];\nif(sidebar){\nx = x.filter((i,widget) => {\n  parents = jQuery(widget).parents(); \n  return jQuery.inArray(sidebar, parents) === -1;\n});\n\nx.each((i,widget) => {\n  parents = jQuery(widget).parents(); \n  if(jQuery.inArray(sidebar, parents) === -1){\n    // jQuery(sidebar).empty();\n    jQuery(widget).remove();\n    var wrapper = jQuery(\"<div/>\", {\"class\": \"moduletable\"});\n    sidebar.prepend(widget);\n  }\n});\n}"
-    in_footer: '1'
-    extra: {  }
-    priority: '-10'
-    name: 'Sidebar Move'
-  -
-    location: ''
-    inline: 'jQuery(''img'').each(function() { let source = this.src; let hover = this.getAttribute(''data-hover''); if(!hover) {return;} this.onmouseover = () => {this.src = this.getAttribute(''data-hover'');}; this.onmouseout = () => {this.src = source;}});'
-    in_footer: '1'
-    extra: {  }
-    priority: '-10'
-    name: 'Hover Jubelbilder'
-  -
     location: 'https://widget-prod.bfv.de/widget/widgetresource/widgetjs'
     inline: ''
     in_footer: '0'
