@@ -16,6 +16,6 @@
         {% include 'partials/bfv_widget.html.twig' with {'bfv_id': header.page.bfv_widget.id|default(gantry.config.page.bfv_widget.bfv_club_id), 'type': header.page.bfv_widget.type, 'name': page.title } %}
     {% endblock %}
 
-    {% do assets.addJs('gantry-theme://engine/js/move.js', {group:'bottom'}) %}
+    {% do assets.addJs('gantry-theme://js/move.js', {group:'bottom'}) %}
 
 {% endblock %}
