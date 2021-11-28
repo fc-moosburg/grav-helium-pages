@@ -21,7 +21,7 @@ function fcmMove() {
 }
 
 function wrapTables() {
-    jQuery("table").wrapAll("<div style='overflow-x:auto'></div>");
+    jQuery("table").wrap("<div style='overflow-x:auto;'/>");
 }
 
 function hoverImageSwap() {
