@@ -1,0 +1,14 @@
+name: Team Seite
+description: Einstellungen für Team Seiten
+type: global
+
+form:
+  fields:
+
+    link:
+      type: text
+      label: Trainingszeiten und Ansprechpartner
+      # classes: fancy
+      help: Übersichtsseite für Trainingszeiten und Ansprechpartner. Wird als Link auf allen Teamseiten verwendet.
+      toggleable: true
+      placeholder: Pfad zur Seite (/jugend/trai...)

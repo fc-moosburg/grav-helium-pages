@@ -14,8 +14,8 @@
 
 {% set times %}
     {% if header.times|length > 0 %}
-        {% include 'partials/team_times.html.twig' with {'times': header.times, 'classes': 'hidden-phone hidden-tablet fcm-move-to-fcm-sidebar'} %}
-        {% include 'partials/team_times.html.twig' with {'times': header.times, 'classes': 'hidden-desktop hidden-large'} %}
+        {% include 'partials/team_times.html.twig' with {'times': header.times, 'link': gantry.config.page.team_defaults.link, 'classes': 'hidden-phone hidden-tablet fcm-move-to-fcm-sidebar'} %}
+        {% include 'partials/team_times.html.twig' with {'times': header.times, 'link': gantry.config.page.team_defaults.link, 'classes': 'hidden-desktop hidden-large'} %}
     {% endif %}
 {% endset %}
 
