@@ -13,9 +13,9 @@
     {% endblock %}
 
     {% block bfv_widget %}
-        {% include 'partials/bfv_widget.html.twig' with {'bfv_id': header.page.bfv_widget.id|default(gantry.config.page.bfv_widget.bfv_club_id), 'type': header.page.bfv_widget.type, 'name': page.title } %}
+        {% include 'partials/bfv_widget.html.twig' with {'bfv_id': header.page.bfv_widget.id|default(gantry.config.page.bfv_widget.bfv_club_id), 'type': header.page.bfv_widget.type, 'name': page.title, 'enabled': header.page.bfv_widget.enabled } %}
     {% endblock %}
 
-    {% do assets.addJs('gantry-theme://js/move.js', {group:'bottom'}) %}
+    {% do assets.addJs('gantry-theme://js/move.js', {priority: 0, group:'bottom'}) %}
 
 {% endblock %}

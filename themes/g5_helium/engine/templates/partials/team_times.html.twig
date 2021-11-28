@@ -1,25 +1,25 @@
-<div class="g-grid team-times {{ classes|join(' ') }}">                        
+<div class="g-grid team-times {{ classes }}">
     <div class="g-block size-100 box-outline title2 shadow">
         <div class="g-content center team-content">            
             <div class="g-title">Trainingszeiten</div>
-                <table>
-                    <tbody>
-                        {% for time in times %}
-                            <tr>
-                                <td>
-                                    <strong>{{ time.day }}</strong>
-                                </td>
-                                <td>
-                                    {{ time.schedule.start }} - {{ time.schedule.end }} Uhr
-                                    {% if time.note is defined %}
-                                    <br/>
-                                    {{ time.note }}
-                                    {% endif %}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+            <table>
+                <tbody>
+                    {% for time in times %}
+                        <tr>
+                            <td>
+                                <strong>{{ time.day }}</strong>
+                            </td>
+                            <td>
+                                {{ time.schedule.start }} - {{ time.schedule.end }} Uhr
+                                {% if time.note is defined %}
+                                <br/>
+                                {{ time.note }}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
             <a href="#" class="button button-xsmall button1 g-block center size-100">Trainingszeiten aller Teams</a>
         </div>
     </div>

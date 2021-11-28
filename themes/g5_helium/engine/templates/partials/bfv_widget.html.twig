@@ -1,6 +1,6 @@
 {% set div_id="bfv{{ bfv_id }}" %}
 
-{% if header.page.bfv_widget.enabled|default(true) %}
+{% if enabled|default(true) %}
     <div class="fcm-move-to-fcm-sidebar">
         <h3>Spielplan</h3>
         <div id="{{ div_id }}">Lade {{ type|lower == "team" ? name : "Vereinsspielplan" }}...</div>

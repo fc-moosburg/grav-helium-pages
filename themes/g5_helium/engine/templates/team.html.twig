@@ -14,14 +14,11 @@
 
 {% set times %}
     {% if header.times|length > 0 %}
-        {% include 'partials/team_times.html.twig' with {'times': header.times, 'classes': 'hidden-desktop hidden-large'} %}
         {% include 'partials/team_times.html.twig' with {'times': header.times, 'classes': 'hidden-phone hidden-tablet fcm-move-to-fcm-sidebar'} %}
+        {% include 'partials/team_times.html.twig' with {'times': header.times, 'classes': 'hidden-desktop hidden-large'} %}
     {% endif %}
 {% endset %}
 
-{% set bfv_widget %}
-        {% include 'partials/bfv_widget.html.twig' with {'bfv_id': header.team.bfv_id, 'name': page.title|raw, 'type': 'team' } %}
-{% endset %}
 
 
 {% block title %}
@@ -43,10 +40,3 @@
     </div>
 {% endblock %}
 
-
-
-{% if header.team.bfv_id is defined %}
-    {% block bfv_widget %}
-        {{ bfv_widget|raw }}
-    {% endblock %}
-{% endif %}
