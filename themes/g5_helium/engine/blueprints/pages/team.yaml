@@ -24,6 +24,7 @@ form:
                   type: pagemediaselect
                   label: Team Bild
                   toggleable: true
+                  placeholder: Bitte wählen ...
                 
                 header.page.team.description:
                   type: text
@@ -109,7 +110,7 @@ form:
 
                 header.contacts.items:
                   type: list
-                  style: vertical
+                  # style: vertical
                   label: Trainer und Betreuer
                   fields:
                     .name:
