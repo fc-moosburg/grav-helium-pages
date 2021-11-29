@@ -1,9 +1,7 @@
 {% extends "default.html.twig" %}
 
 {% set team_image %}
-    {% if header.page.team.image is defined %}
-        {% include 'partials/team_image.html.twig' with {'image': header.page.team.image, 'description': header.page.team.description, 'name': page.title } %}
-    {% endif %}
+    {% include 'partials/team_image.html.twig' with {'image': header.page.team.image, 'description': header.page.team.description, 'name': page.title } %}
 {% endset %}
 
 {% set contacts %}
