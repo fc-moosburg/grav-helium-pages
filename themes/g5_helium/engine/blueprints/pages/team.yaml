@@ -100,7 +100,14 @@ form:
               title: Ansprechpartner
               underline: true
               fields:
-                header.contacts:
+                header.contacts.title:
+                  type: text
+                  label: Überschrift
+                  placeholder: Ansprechpartner
+                  toggleable: true
+                  markdown: false
+
+                header.contacts.items:
                   type: list
                   style: vertical
                   label: Trainer und Betreuer
