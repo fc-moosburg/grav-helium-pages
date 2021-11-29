@@ -23,7 +23,9 @@
                                 {{ (contact.telephone|trim|nl2br ~ (contact.email|length > 0 ? '<br/>' : ''))|raw }}
                             {% endif %}
                             
-                            {{ contact.email|trim|nl2br }}
+                            {% if contact.email|length > 0 %}
+                                <a href="mailto:{{ contact.email|trim|safe_email }}">{{ contact.email|trim|safe_email }}</a>
+                            {% endif %}
                         </p>
                     </div>
                 </div>
