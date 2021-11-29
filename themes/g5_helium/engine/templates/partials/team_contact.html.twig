@@ -16,7 +16,7 @@
                         <p class="card-text">
 
                             {% if contact.role|length > 0 %}
-                                <strong>{{ contact.role }}</strong>{{ ((contact.telephone|length > 0) or (contact.email|length > 0) ? '<br/>' : '')|raw }}
+                                <strong>{{ contact.role|raw }}</strong>{{ ((contact.telephone|length > 0) or (contact.email|length > 0) ? '<br/>' : '')|raw }}
                             {% endif %}
 
                             {% if contact.telephone|length > 0 %}
