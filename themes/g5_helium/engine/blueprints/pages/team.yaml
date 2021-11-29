@@ -144,6 +144,19 @@ form:
                       help: Bitte Bild zuerst unter Seitenmedien / Page media hochladen.
                       toggleable: true
 
+                    .size:
+                      type: toggle
+                      label: Layout (pro Zeile)
+                      help: Wie viel Platz der Kontakt in einer Zeile einnehmen kann. Klein = 33%, Mittel = 50%, Groß = 100%.
+                      toggleable: true
+                      highlight: "33-3"
+                      default: "33-3"
+                      options:
+                        "33-3": Klein (3)
+                        "50": Mittel (2)
+                        "100": Groß (1)
+
+
 
 
         advanced:
